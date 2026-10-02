@@ -66,7 +66,7 @@ modelo_propension/
 ### 1. Instalar dependencias
 
 ```bash
-pip install -r scripts/requirements.txt
+pip install -r scripts/requirements-dev.txt
 ```
 
 > Nota: el archivo vive en `scripts/` para que Vercel no detecte el repo como app Python (el dashboard es un sitio estatico sin backend).

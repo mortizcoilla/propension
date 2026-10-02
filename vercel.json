@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "css/**", "use": "@vercel/static" },
+    { "src": "js/**", "use": "@vercel/static" },
+    { "src": "docs/**", "use": "@vercel/static" },
+    { "src": "notebooks/Modelo_Propension.ipynb", "use": "@vercel/static" }
+  ],
+  "routes": [{ "src": "/", "dest": "/index.html" }]
+}
