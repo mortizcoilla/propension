@@ -63,7 +63,15 @@ modelo_propension/
 
 ## Quickstart
 
-### 1. Generar datos sinteticos
+### 1. Instalar dependencias
+
+```bash
+pip install -r scripts/requirements.txt
+```
+
+> Nota: el archivo vive en `scripts/` para que Vercel no detecte el repo como app Python (el dashboard es un sitio estatico sin backend).
+
+### 2. Generar datos sinteticos
 
 ```bash
 python scripts/generate_synthetic_data.py
@@ -71,7 +79,7 @@ python scripts/generate_synthetic_data.py
 
 Genera 270 000 cuentas-periodo en `data/synthetic/` (~225 MB total, seed = 2024).
 
-### 2. Ejecutar el pipeline del notebook
+### 3. Ejecutar el pipeline del notebook
 
 ```bash
 jupyter nbconvert --to notebook --execute notebooks/Modelo_Propension.ipynb --output Modelo_Propension_executed.ipynb
@@ -83,7 +91,7 @@ Tiempo: ~2-4 minutos. Genera:
 - `data/processed/feature_importance_*.csv` por cluster
 - `data/processed/segments_summary.csv`
 
-### 3. Construir el JSON embebido del dashboard
+### 4. Construir el JSON embebido del dashboard
 
 ```bash
 python scripts/build_data.py
@@ -91,7 +99,7 @@ python scripts/build_data.py
 
 Genera `js/data.js` (~10 KB) con los datos del dashboard.
 
-### 4. Convertir el paper a Word
+### 5. Convertir el paper a Word
 
 ```bash
 python scripts/md_to_docx.py
@@ -99,7 +107,7 @@ python scripts/md_to_docx.py
 
 Genera `docs/paper1_modelo_propension.docx` (~630 KB).
 
-### 5. Servir el dashboard
+### 6. Servir el dashboard
 
 ```bash
 python -m http.server 8000
