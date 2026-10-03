@@ -28,7 +28,9 @@ import pandas as pd
 # Configuracion
 # ---------------------------------------------------------------------------
 
-PROJECT_ROOT = Path(r"C:\Workspace\Optimizacion_de_Carteras\modelo_propension")
+# PROJECT_ROOT se resuelve relativamente a la ubicacion de este script, para que
+# el script funcione sin importar donde este clonado el proyecto.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SYNTH_DIR = PROJECT_ROOT / "data" / "synthetic"
 SYNTH_DIR.mkdir(parents=True, exist_ok=True)
 (SYNTH_DIR / "maestros").mkdir(parents=True, exist_ok=True)

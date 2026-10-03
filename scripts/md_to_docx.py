@@ -23,7 +23,9 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
-PROJECT_ROOT = Path(r"C:\Workspace\Optimizacion_de_Carteras\modelo_propension")
+# PROJECT_ROOT se resuelve relativamente a la ubicacion de este script, para que
+# el script funcione sin importar donde este clonado el proyecto.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 MD_PATH = PROJECT_ROOT / "docs" / "paper1_modelo_propension.md"
 FIG_DIR = PROJECT_ROOT / "docs" / "figures"
 OUT_PATH = PROJECT_ROOT / "docs" / "paper1_modelo_propension.docx"

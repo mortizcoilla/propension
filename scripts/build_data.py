@@ -14,7 +14,9 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-PROJECT_ROOT = Path(r"C:\Workspace\Optimizacion_de_Carteras\modelo_propension")
+# PROJECT_ROOT se resuelve relativamente a la ubicacion de este script, para que
+# el script funcione sin importar donde este clonado el proyecto.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PROC_DIR = PROJECT_ROOT / "data" / "processed"
 JS_DIR = PROJECT_ROOT / "js"
 JS_DIR.mkdir(parents=True, exist_ok=True)
